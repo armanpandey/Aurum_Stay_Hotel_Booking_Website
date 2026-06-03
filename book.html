@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Now – Aurum Stay</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Aurum<span>Stay</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="book.html" class="active">Book Now</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="book.html" class="nav-btn">Reserve a Room</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Reserve Your Room</h1>
+    <p>Fill in the details below and we'll confirm your booking within 24 hours.</p>
+  </div>
+
+  <section class="section book-section">
+    <div class="book-wrapper">
+
+      <!-- BOOKING FORM -->
+      <div class="book-form-card">
+        <h2>Booking Details</h2>
+        <div id="bookingForm">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Rahul" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Sharma" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="rahul@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Check-in Date</label>
+              <input type="date" id="checkin" onchange="calculateCost()" />
+            </div>
+            <div class="form-group">
+              <label>Check-out Date</label>
+              <input type="date" id="checkout" onchange="calculateCost()" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Room Type</label>
+              <select id="roomType" onchange="calculateCost()">
+                <option value="">Select a room</option>
+                <option value="2800">Classic Single Room – ₹2,800/night</option>
+                <option value="3500">Twin Room – ₹3,500/night</option>
+                <option value="4500">Deluxe King Room – ₹4,500/night</option>
+                <option value="6800">Family Deluxe Room – ₹6,800/night</option>
+                <option value="8200">Garden Suite – ₹8,200/night</option>
+                <option value="18000">Presidential Suite – ₹18,000/night</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Number of Guests</label>
+              <select>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Special Requests (optional)</label>
+            <textarea placeholder="E.g. early check-in, extra pillows, ground floor preference..."></textarea>
+          </div>
+
+          <button class="btn-primary full-btn" onclick="submitBooking()">Confirm Booking</button>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div id="bookingSuccess" class="booking-success hidden">
+          <div class="success-icon">✓</div>
+          <h3>Booking Request Sent!</h3>
+          <p>Thank you! We've received your booking request and will confirm via email within 24 hours.</p>
+          <a href="index.html" class="btn-outline">Back to Home</a>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARD -->
+      <div class="book-summary">
+        <h3>Booking Summary</h3>
+        <div class="summary-item">
+          <span>Room</span>
+          <span id="sumRoom">–</span>
+        </div>
+        <div class="summary-item">
+          <span>Check-in</span>
+          <span id="sumCheckin">–</span>
+        </div>
+        <div class="summary-item">
+          <span>Check-out</span>
+          <span id="sumCheckout">–</span>
+        </div>
+        <div class="summary-item">
+          <span>Nights</span>
+          <span id="sumNights">–</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-item total">
+          <span>Estimated Total</span>
+          <span id="sumTotal">–</span>
+        </div>
+        <p class="summary-note">* Final price confirmed upon booking approval. Taxes may apply.</p>
+
+        <div class="book-perks">
+          <h4>Included with every stay</h4>
+          <p>✅ Free breakfast</p>
+          <p>✅ Free Wi-Fi</p>
+          <p>✅ 24/7 front desk</p>
+          <p>✅ Free parking</p>
+          <p>✅ Airport pickup (on request)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Aurum<span>Stay</span></div>
+        <p>Your comfort is our commitment.<br/>Located in the heart of the city.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="book.html">Book Now</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 12 Marina Boulevard, Bhubaneswar</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@aurumstay.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 AurumStay. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

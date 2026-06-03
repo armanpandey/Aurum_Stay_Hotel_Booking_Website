@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aurum Stay – Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">Aurum<span>Stay</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="book.html" class="nav-btn">Reserve a Room</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Welcome to Aurum Stay</p>
+      <h1>Where Comfort<br/>Meets Elegance</h1>
+      <p class="hero-sub">Experience world-class hospitality in the heart of the city. Your perfect getaway starts here.</p>
+      <div class="hero-btns">
+        <a href="book.html" class="btn-primary">Book Your Stay</a>
+        <a href="rooms.html" class="btn-outline">Explore Rooms</a>
+      </div>
+    </div>
+    <div class="hero-scroll">scroll down ↓</div>
+  </section>
+
+  <!-- QUICK BOOKING BAR -->
+  <section class="quick-book">
+    <div class="qb-inner">
+      <div class="qb-field">
+        <label>Check-in</label>
+        <input type="date" />
+      </div>
+      <div class="qb-divider"></div>
+      <div class="qb-field">
+        <label>Check-out</label>
+        <input type="date" />
+      </div>
+      <div class="qb-divider"></div>
+      <div class="qb-field">
+        <label>Guests</label>
+        <select>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4+ Guests</option>
+        </select>
+      </div>
+      <a href="book.html" class="btn-primary qb-btn">Check Availability</a>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section highlights">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">A Stay You'll Remember</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <h3>Peaceful Ambience</h3>
+        <p>Nestled away from the noise, our property offers calm, lush surroundings for total relaxation.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍽️</div>
+        <h3>Fine Dining</h3>
+        <p>Our in-house restaurant serves curated meals from local and international chefs, fresh daily.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛁</div>
+        <h3>Luxury Rooms</h3>
+        <p>Every room is thoughtfully designed with premium bedding, en-suite baths, and modern amenities.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Safe & Secure</h3>
+        <p>24/7 front desk, CCTV, and dedicated concierge to ensure you feel safe at all times.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ROOMS -->
+  <section class="section rooms-preview">
+    <div class="section-label">Our Spaces</div>
+    <h2 class="section-title">Featured Rooms</h2>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600')"></div>
+        <div class="room-info">
+          <h3>Deluxe Room</h3>
+          <p>King bed · City view · 32 sqm</p>
+          <div class="room-footer">
+            <span class="price">₹4,500 <small>/night</small></span>
+            <a href="book.html" class="btn-sm">Book</a>
+          </div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600')"></div>
+        <div class="room-info">
+          <h3>Suite Room</h3>
+          <p>King bed · Garden view · 55 sqm</p>
+          <div class="room-footer">
+            <span class="price">₹8,200 <small>/night</small></span>
+            <a href="book.html" class="btn-sm">Book</a>
+          </div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600')"></div>
+        <div class="room-info">
+          <h3>Family Room</h3>
+          <p>2 beds · Pool view · 48 sqm</p>
+          <div class="room-footer">
+            <span class="price">₹6,800 <small>/night</small></span>
+            <a href="book.html" class="btn-sm">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a href="rooms.html" class="btn-outline">View All Rooms →</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials">
+    <div class="section-label">Guest Reviews</div>
+    <h2 class="section-title">What Our Guests Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"One of the best stays I've ever had. The staff was incredibly warm and the room was spotless."</p>
+        <div class="testi-author">— Priya S., Mumbai</div>
+      </div>
+      <div class="testi-card">
+        <p>"The food at their restaurant is phenomenal. We came back just for the breakfast buffet!"</p>
+        <div class="testi-author">— Arjun R., Bengaluru</div>
+      </div>
+      <div class="testi-card">
+        <p>"Perfect location, lovely ambience, and easy booking. Will definitely return next year."</p>
+        <div class="testi-author">— Sneha K., Delhi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Aurum<span>Stay</span></div>
+        <p>Your comfort is our commitment.<br/>Located in the heart of the city.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="book.html">Book Now</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 12 Marina Boulevard, Bhubaneswar</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@aurumstay.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 AurumStay. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

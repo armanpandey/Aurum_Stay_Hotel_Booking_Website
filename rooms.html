@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rooms – Aurum Stay</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Aurum<span>Stay</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html" class="active">Rooms</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="book.html" class="nav-btn">Reserve a Room</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Our Rooms & Suites</h1>
+    <p>Choose from our carefully curated selection of rooms designed for your comfort.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <button class="filter-btn active" onclick="filterRooms('all', this)">All Rooms</button>
+    <button class="filter-btn" onclick="filterRooms('standard', this)">Standard</button>
+    <button class="filter-btn" onclick="filterRooms('deluxe', this)">Deluxe</button>
+    <button class="filter-btn" onclick="filterRooms('suite', this)">Suite</button>
+  </section>
+
+  <!-- ROOMS LISTING -->
+  <section class="section rooms-listing">
+    <div class="rooms-list" id="roomsList">
+
+      <div class="room-list-card" data-type="standard">
+        <div class="rlc-img" style="background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=700')"></div>
+        <div class="rlc-info">
+          <div class="rlc-badge">Standard</div>
+          <h3>Classic Single Room</h3>
+          <p>A cozy, well-furnished room perfect for solo travellers. Features a comfortable single bed, work desk, and en-suite bathroom.</p>
+          <ul class="amenities">
+            <li>🛏 Single Bed</li>
+            <li>📶 Free Wi-Fi</li>
+            <li>❄️ AC</li>
+            <li>📺 Smart TV</li>
+            <li>🚿 En-suite Bath</li>
+          </ul>
+          <div class="rlc-footer">
+            <span class="price">₹2,800 <small>/night</small></span>
+            <a href="book.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-list-card" data-type="standard">
+        <div class="rlc-img" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700')"></div>
+        <div class="rlc-info">
+          <div class="rlc-badge">Standard</div>
+          <h3>Twin Room</h3>
+          <p>Ideal for friends or colleagues. Two single beds, spacious layout, and a private balcony with a garden view.</p>
+          <ul class="amenities">
+            <li>🛏 Twin Beds</li>
+            <li>📶 Free Wi-Fi</li>
+            <li>❄️ AC</li>
+            <li>🌿 Garden View</li>
+            <li>🚿 En-suite Bath</li>
+          </ul>
+          <div class="rlc-footer">
+            <span class="price">₹3,500 <small>/night</small></span>
+            <a href="book.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-list-card" data-type="deluxe">
+        <div class="rlc-img" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700')"></div>
+        <div class="rlc-info">
+          <div class="rlc-badge deluxe">Deluxe</div>
+          <h3>Deluxe King Room</h3>
+          <p>Spacious and elegant, featuring a king-sized bed, city views, and a premium mini-bar. Our most popular option.</p>
+          <ul class="amenities">
+            <li>🛏 King Bed</li>
+            <li>📶 Free Wi-Fi</li>
+            <li>❄️ AC</li>
+            <li>🏙 City View</li>
+            <li>🍾 Mini Bar</li>
+          </ul>
+          <div class="rlc-footer">
+            <span class="price">₹4,500 <small>/night</small></span>
+            <a href="book.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-list-card" data-type="deluxe">
+        <div class="rlc-img" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?w=700')"></div>
+        <div class="rlc-info">
+          <div class="rlc-badge deluxe">Deluxe</div>
+          <h3>Family Deluxe Room</h3>
+          <p>Designed for families with two double beds, a kids corner, and a spacious bathroom with a bathtub.</p>
+          <ul class="amenities">
+            <li>🛏 2 Double Beds</li>
+            <li>📶 Free Wi-Fi</li>
+            <li>❄️ AC</li>
+            <li>🏊 Pool View</li>
+            <li>🛁 Bathtub</li>
+          </ul>
+          <div class="rlc-footer">
+            <span class="price">₹6,800 <small>/night</small></span>
+            <a href="book.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-list-card" data-type="suite">
+        <div class="rlc-img" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=700')"></div>
+        <div class="rlc-info">
+          <div class="rlc-badge suite">Suite</div>
+          <h3>Garden Suite</h3>
+          <p>A lavish suite with a private garden entrance, separate living area, and a soaking tub surrounded by greenery.</p>
+          <ul class="amenities">
+            <li>🛏 King Bed</li>
+            <li>🌿 Private Garden</li>
+            <li>🛁 Soaking Tub</li>
+            <li>🍾 Mini Bar</li>
+            <li>🍳 Kitchenette</li>
+          </ul>
+          <div class="rlc-footer">
+            <span class="price">₹8,200 <small>/night</small></span>
+            <a href="book.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-list-card" data-type="suite">
+        <div class="rlc-img" style="background-image: url('https://images.unsplash.com/photo-1560185127-6a474fdb87b2?w=700')"></div>
+        <div class="rlc-info">
+          <div class="rlc-badge suite">Suite</div>
+          <h3>Presidential Suite</h3>
+          <p>Our crown jewel. A full floor of luxury with panoramic city views, private dining room, and dedicated butler service.</p>
+          <ul class="amenities">
+            <li>🛏 Super King Bed</li>
+            <li>🏙 Panoramic View</li>
+            <li>🛁 Jacuzzi</li>
+            <li>🍽 Private Dining</li>
+            <li>🤵 Butler Service</li>
+          </ul>
+          <div class="rlc-footer">
+            <span class="price">₹18,000 <small>/night</small></span>
+            <a href="book.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Aurum<span>Stay</span></div>
+        <p>Your comfort is our commitment.<br/>Located in the heart of the city.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="book.html">Book Now</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 12 Marina Boulevard, Bhubaneswar</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@aurumstay.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 AurumStay. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
